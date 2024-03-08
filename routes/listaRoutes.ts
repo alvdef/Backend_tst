@@ -1,8 +1,7 @@
 import express, { Express, Request, Response } from "express";
-export const listaRouter = express.Router();
+// export const listaRouter = express.Router();
 
 //const listaController = require("../controllers/listaController");
-
 
 //[POST]/lista/ : Crea una lista nueva.
 //[DELETE]/lista/<idLista>/ : Borra una lista.
@@ -14,23 +13,22 @@ export const listaRouter = express.Router();
 //[DELETE]/lista/audio/<idLista>/<idAudio> : Elimina un audio de la lista.
 ///lista/add-collaborator/<idLista>/<idUsuario>/: Añade un colaborador a la lista.
 
-
 listaRouter.post("/lista/", (req: Request, res: Response) => {
-    //listaController.createList(req, res);
+  //listaController.createList(req, res);
 });
 
-listaRouter.post('/calc', (req: Request, res: Response): void => {
-    const { a, b } = req.body;
+listaRouter.post("/calc", (req: Request, res: Response): void => {
+  const { a, b } = req.body;
 
-    if (a && b && typeof a === 'number' && typeof b === 'number') {
-      res.json({
-        success: true,
-        message: a + b,
-      });
-    } else {
-      res.json({
-        success: false,
-        message: 'Missing parameters',
-      });
-    }
-  });
+  if (a && b && typeof a === "number" && typeof b === "number") {
+    res.json({
+      success: true,
+      message: a + b,
+    });
+  } else {
+    res.json({
+      success: false,
+      message: "Missing parameters",
+    });
+  }
+});
