@@ -7,7 +7,8 @@
     "start": "npx tsc && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.ts .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -31,9 +32,17 @@
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "prisma": "^5.10.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
